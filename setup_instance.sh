@@ -28,3 +28,7 @@ git clone -c feature.manyFiles=true https://github.com/spack/spack.git
 # Install WPS and prerequisites using spack
 spack install wps
 
+# Download GEOGRID inputs and put them in the large volume
+cd ${SHARED_DIR}
+wget -c https://www2.mmm.ucar.edu/wrf/src/wps_files/geog_high_res_mandatory.tar.gz
+tar -xvzf geog_high_res_mandatory.tar.gz -C ${SHARED_DIR}
