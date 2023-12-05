@@ -12,6 +12,10 @@ sudo chown ubuntu ${SHARED_DIR}
 sudo chgrp ubuntu ${SHARED_DIR}
 sudo mount /dev/nvme1n1 ${SHARED_DIR}
 
+# Make the mount permanent
+sudo echo "$(blkid -o export /dev/nvme1n1 | grep ^UUID=) /home/ubuntu/shared xfs defaults,noatime" | sudo tee -a /etc/fstab
+sudo mount -a
+
 # Update OS and Install prerequisites
 sudo apt update
 sudo apt install build-essential ca-certificates coreutils curl environment-modules gfortran git gpg lsb-release python3 python3-distutils python3-venv unzip zip
