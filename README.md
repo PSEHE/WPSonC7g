@@ -9,10 +9,10 @@ Note on Github with AWS EC2 instances:
 
 You may also need to update the origin for your repository if it is set to HTTPS. Do this to switch to SSH:
 
-'''
+```
 git remote -v
 git remote set-url origin git@github.com:USERNAME/REPONAME.git
-'''
+```
 
 
 Step 1: Clone this github repository to /home/ubuntu
