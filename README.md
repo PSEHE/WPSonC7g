@@ -13,6 +13,18 @@ Step 3: Create and run the case
 Run the create_case.sh script
 
 Step 4: Copy output to S3 bucket
+To get credentials open a cloudshell in your AWS console account and type:
+```
+TOKEN=$(curl -XPUT localhost:1338/latest/api/token -H "X-aws-ec2-metadata-token-ttl-seconds: 60")
+curl localhost:1338/latest/meta-data/container/security-credentials -H "X-aws-ec2-metadata-token: $TOKEN"
+```
+Then install and configure the AWS cli
+```
+sudo apt install awscli
+aws configure
+```
+
+
 
 # Note on Github with AWS EC2 instances:
 
