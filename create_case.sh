@@ -32,6 +32,10 @@ cd ${SHARED_DIR}/met_data
 cp /home/ubuntu/WPSonC7g/fnl_download_scripts/* . 
 cp /home/ubuntu/WPSonC7g/namelists/namelist.wps ${SETUP_DIR}/
 
+# Prerequisites for running
+# May be a good idea to add to .bashrc
+export PATH=/home/ubuntu/WRF/Libs/NETCDF/bin:${PATH}
+export LD_LIBRARY_PATH=/home/ubuntu/WRF/Libs/NETCDF/lib:$LD_LIBRARY_PATH
 
 # Run geogrid.exe
 #./geogrid.exe
